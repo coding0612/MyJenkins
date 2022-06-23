@@ -26,7 +26,11 @@ pipeline {
     }
 
     stage('Deploy') {
+      
       parallel {
+        when {
+          branch 'master'
+        }
         stage('Deploy') {
           steps {
             input(message: 'Do you want to deploy??', id: 'Yes')
@@ -36,7 +40,6 @@ pipeline {
 
         stage('Artifact') {
           steps {
-            archiveArtifacts 'testlog.txt'
             archiveArtifacts 'testlog.txt'
           }
         }
