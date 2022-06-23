@@ -21,8 +21,8 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        echo 'Deploy it to cloud'
         input(message: 'Do you want to deploy?', id: 'Yes')
+        echo 'Deploy it to cloud'
       }
     }
 
