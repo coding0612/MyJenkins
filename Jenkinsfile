@@ -25,4 +25,7 @@ pipeline {
     }
 
   }
+  environment {
+    ChromeDriverPath = 'C:/Driver/Chrome'
+  }
 }
