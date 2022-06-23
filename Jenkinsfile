@@ -18,7 +18,7 @@ pipeline {
 
         stage('Create file') {
           steps {
-            writeFile(file: 'testlog.txt', text: 'Writing a file')
+            writeFile(file: 'testlog.txt', text: "Writing a file in ${ChromeDriverPath}")
           }
         }
 
