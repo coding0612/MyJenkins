@@ -26,10 +26,17 @@ pipeline {
     }
 
     stage('Deploy') {
+
       parallel {
+        
         stage('Deploy') {
+
+          when {
+            branch 'master'
+          }
+         
           steps {
-            input(message: 'Do you want to deploy?', id: 'Yes')
+            input(message: 'Do you want to deploy??', id: 'Yes')
             echo 'Deploy it to cloud'
           }
         }
